@@ -1,5 +1,10 @@
 {
-    "token": "NzQxMDE5NTE1NDMyODYxNzI2.XyxeMw._Vr6068uP1cJ6ofPJSx2nkzm3xM",
+    "token": "NzQxMDE5NTE1NDMyODYxNzI2.XyxeMw.imIGWL36ZzNsoz1-7iJR5Y1iHCQ",
     "prefix": "_",
-    "color": "AQUA"
+    "color": "AQUA",
+    "citations": true,
+    "statut": {
+        "message": "By Nyrok",
+        "type": "Différents types de statut : WATCHING, PLAYING, LISTENING, STREAMING."
+    }
 }

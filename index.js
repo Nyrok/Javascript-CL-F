@@ -11,23 +11,43 @@ const config = require("./config.json")
 const token = config.token
 const prefix = config.prefix
 const color = config.color
+const statutType = config.statut.type
 client.login(token)
 const top_citations = ["Un problème sans solution est un problème mal posé.", "Une personne qui n’a jamais commis d’erreurs n’a jamais tenté d’innover.", "Ce n’est pas que je suis si intelligent, c’est que je reste plus longtemps avec les problèmes.", "Rien n’est plus proche du vrai que le faux.", "Si les faits ne correspondent pas à la théorie, changez les faits.", "Ce n’est pas à cause de l’attraction terrestre que des gens tombent… amoureux !", "Le problème aujourd’hui n’est pas l’énergie atomique, mais le coeur des hommes.", "Si vous ne pouvez expliquer un concept à un enfant de six ans, c’est que vous ne le comprenez pas complètement.", "L’Etat est notre serviteur et nous n’avons pas à en être les esclaves.", "Il n’existe que deux choses infinies, l’univers et la bêtise humaine… mais pour l’univers, je n’ai pas de certitude absolue."]
 
 client.on("ready", () => {
     console.log(figlet.textSync("<CL-F>\nBY NYROK").rainbow)
-    setInterval(function () {
-        let random_top_citations = top_citations[Math.floor(Math.random() * top_citations.length)];
-        client.user.setActivity(random_top_citations, {
-            type: "WATCHING"
-        });
-    }, 10000)
+    if (config.citations === true) {
+        if (!(statutType === "PLAYING" || statutType === "WATCHING" || statutType === "LISTENING" || statutType === "STREAMING")) statutType = "LISTENING"
+        if (statutType === "STREAMING") {
+            setInterval(function () {
+                let random_top_citations = top_citations[Math.floor(Math.random() * top_citations.length)];
+                client.user.setActivity(random_top_citations, {
+                    type: statutType,
+                    url: "https://www.twitch.tv/nyrok_le_streamer_zebi"
+                });
+            }, 10000)
+        }
+        setInterval(function () {
+            let random_top_citations = top_citations[Math.floor(Math.random() * top_citations.length)];
+            client.user.setActivity(random_top_citations, {
+                type: statutType
+            });
+        }, 10000)
+    } else if (config.citations === false) {
+        if (!(statutType === "PLAYING" || statutType === "WATCHING" || statutType === "LISTENING" || statutType === "STREAMING")) statutType = "LISTENING"
+        setInterval(function () {
+            client.user.setActivity(config.statut.message, {
+                type: statutType
+            });
+        }, 10000)
+    }
 })
 
 client.on("message", message => {
     if (message.content.startsWith(prefix + "menu") || message.content.startsWith(prefix + "help")) {
         return message.channel.send(embed.setTitle("(MENU)").setURL("https://github.com/Nyrok")
-        .addField("Commandes disponibles :", `
+            .addField("Commandes disponibles :", `
 \`${prefix}crédits\` - Afficher les crédits.
 \`${prefix}calcul\` - Calculer via une formule de mathématique.
 \`${prefix}hypothénuse-pythagore\` - Calculer l'hypothénuse d'un triangle rectangle grâce au théorème de Pythagore.
@@ -40,8 +60,8 @@ client.on("message", message => {
 \`${prefix}aire-rectangle\` - Calculer l'aire d'un rectangle.
 **[INFO] - Pour savoir comment utiliser la commande tapez juste la commande.**
 `)
-        .setColor(color)
-        .setFooter("@Nyrok10 on Twitter", "https://cdn.discordapp.com/emojis/590848931852713984.png?v=1").catch(console.error))
+            .setColor(color)
+            .setFooter("@Nyrok10 on Twitter", "https://cdn.discordapp.com/emojis/590848931852713984.png?v=1").catch(console.error))
     }
 
     if (message.content.startsWith(prefix + "calcul")) {
@@ -57,15 +77,15 @@ client.on("message", message => {
         if (signe === "*") signe = "x";
         return message.reply(`Le résultat de **${first} ${signe} ${second} = ${result}**.`)
     }
-    if(message.content.startsWith(prefix + "crédits")){
+    if (message.content.startsWith(prefix + "crédits")) {
         return message.channel.send(embed.setTitle("(CRÉDITS)").setURL("https://github.com/Nyrok")
-        .addField("Créateur : Nyrok", `**Remerciements :**
+            .addField("Créateur : Nyrok", `**Remerciements :**
         \`Seryû-Ub\` - github.com/Seryu-Ub
         \`Plattyz\` - github.com/Plattyz
         \`Zelly\` - github.com/ZelliDev
 `)
-        .setColor(color)
-        .setFooter("@Nyrok10 on Twitter", "https://cdn.discordapp.com/emojis/590848931852713984.png?v=1"))
+            .setColor(color)
+            .setFooter("@Nyrok10 on Twitter", "https://cdn.discordapp.com/emojis/590848931852713984.png?v=1"))
     }
     if (message.content.startsWith(prefix + "hypothénuse-pythagore")) {
         let args = message.content.split(" ").slice(1)

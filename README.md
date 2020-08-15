@@ -1,4 +1,5 @@
 # JavascriptCL-F
+## Inspired by my friend's project : https://github.com/Seryu-Ub/CsharpCl-F
 ### A simple project for javascript &amp; discord.js beginners.
 
 # Informations

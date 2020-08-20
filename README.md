@@ -12,6 +12,10 @@
 * **IDE** (Visual Studio Code ou Sublime Text recommandés)
   * *Lien vers [Visual Studio Code](https://code.visualstudio.com/Download).*
   * *Lien vers [Sublime Text](https://www.sublimetext.com/download).*
+ * **Packages NPM :**
+  * *npm install [discord.js](https://www.npmjs.com/package/discord.js)*
+  * *npm install [figlet](https://www.npmjs.com/package/figlet)*
+  * *npm install [colors](https://www.npmjs.com/package/colors)*
   
 # Utilisation
 #### Tout d'abord, téléchargez le code [ici](https://github.com/Nyrok/JavascriptCL-F/archive/master.zip), ensuite extrayez le code.

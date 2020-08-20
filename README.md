@@ -14,7 +14,7 @@
   * *Lien vers [Sublime Text](https://www.sublimetext.com/download).*
   
 # Utilisation
-#### Tout d'abord, téléchargez le code [ici](https://github.com/Nyrok/JavascriptCL-F/archive/master.zip), ensuite extrayez le code et extrayez le fichier `node_modules.rar`.
+#### Tout d'abord, téléchargez le code [ici](https://github.com/Nyrok/JavascriptCL-F/archive/master.zip), ensuite extrayez le code.
 #### Ensuite ouvrez Visual Studio Code et faîtes Ctrl+K et Ctrl+O (ouvrir un dossier) et ouvrez le dossier extrait au début du tutoriel.
 #### Allez ensuite sur https://discord.com/developers/applications et créer une application, puis un bot et enfin copiez le token et entrez le dans le fichier `config.json`, *vous pouvez aussi y modifier ce que vous voulez*. [Comment créer un bot discord](https://youtu.be/lOhfkVCrxG4)
 #### Et enfin ouvrez le fichier start.cmd and `Enjoy !`

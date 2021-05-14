@@ -1,24 +1,23 @@
-const functionsFile = require("./functions.js")
+const functionsFile = require("./functions.js");
 const {
     Client,
     MessageEmbed
-} = require("discord.js")
-require("colors")
-const figlet = require("figlet")
-const client = new Client()
-const embed = new MessageEmbed()
-const config = require("./config.json")
-const token = config.token
-const prefix = config.prefix
-const color = config.color
-const statutType = config.statut.type
-client.login(token)
-const top_citations = ["Un problème sans solution est un problème mal posé.", "Une personne qui n’a jamais commis d’erreurs n’a jamais tenté d’innover.", "Ce n’est pas que je suis si intelligent, c’est que je reste plus longtemps avec les problèmes.", "Rien n’est plus proche du vrai que le faux.", "Si les faits ne correspondent pas à la théorie, changez les faits.", "Ce n’est pas à cause de l’attraction terrestre que des gens tombent… amoureux !", "Le problème aujourd’hui n’est pas l’énergie atomique, mais le coeur des hommes.", "Si vous ne pouvez expliquer un concept à un enfant de six ans, c’est que vous ne le comprenez pas complètement.", "L’Etat est notre serviteur et nous n’avons pas à en être les esclaves.", "Il n’existe que deux choses infinies, l’univers et la bêtise humaine… mais pour l’univers, je n’ai pas de certitude absolue."]
+} = require("discord.js");
+require("colors");
+const figlet = require("figlet");
+const client = new Client();
+const config = require("./config.json");
+const token = config.token;
+const prefix = config.prefix;
+const color = config.color;
+const statutType = config.statut.type;
+client.login(token);
+const top_citations = ["Un problème sans solution est un problème mal posé.", "Une personne qui n’a jamais commis d’erreurs n’a jamais tenté d’innover.", "Ce n’est pas que je suis si intelligent, c’est que je reste plus longtemps avec les problèmes.", "Rien n’est plus proche du vrai que le faux.", "Si les faits ne correspondent pas à la théorie, changez les faits.", "Ce n’est pas à cause de l’attraction terrestre que des gens tombent… amoureux !", "Le problème aujourd’hui n’est pas l’énergie atomique, mais le coeur des hommes.", "Si vous ne pouvez expliquer un concept à un enfant de six ans, c’est que vous ne le comprenez pas complètement.", "L’Etat est notre serviteur et nous n’avons pas à en être les esclaves.", "Il n’existe que deux choses infinies, l’univers et la bêtise humaine… mais pour l’univers, je n’ai pas de certitude absolue."];
 
 client.on("ready", () => {
-    console.log(figlet.textSync("<CL-F>\nBY NYROK").rainbow)
+    console.log(figlet.textSync("<CL-F>\nBY NYROK").rainbow);
     if (config.citations === true) {
-        if (!(statutType === "PLAYING" || statutType === "WATCHING" || statutType === "LISTENING" || statutType === "STREAMING")) statutType = "LISTENING"
+        if (!(statutType === "PLAYING" || statutType === "WATCHING" || statutType === "LISTENING" || statutType === "STREAMING")) statutType = "LISTENING";
         if (statutType === "STREAMING") {
             setInterval(function () {
                 let random_top_citations = top_citations[Math.floor(Math.random() * top_citations.length)];
@@ -45,8 +44,9 @@ client.on("ready", () => {
 })
 
 client.on("message", message => {
+    let menu = new MessageEmbed()
     if (message.content.startsWith(prefix + "menu") || message.content.startsWith(prefix + "help")) {
-        return message.channel.send(embed.setTitle("(MENU)").setURL("https://github.com/Nyrok")
+        return message.channel.send(menu.setTitle("(MENU)").setURL("https://github.com/Nyrok")
             .addField("Commandes disponibles :", `
 \`${prefix}crédits\` - Afficher les crédits.
 \`${prefix}calcul\` - Calculer via une formule de mathématique.
@@ -61,7 +61,7 @@ client.on("message", message => {
 **[INFO] - Pour savoir comment utiliser la commande tapez juste la commande.**
 `)
             .setColor(color)
-            .setFooter("@Nyrok10 on Twitter", "https://cdn.discordapp.com/emojis/590848931852713984.png?v=1").catch(console.error))
+            .setFooter("@Nyrok10 on Twitter", "https://cdn.discordapp.com/emojis/590848931852713984.png?v=1"))
     }
 
     if (message.content.startsWith(prefix + "calcul")) {
@@ -78,7 +78,8 @@ client.on("message", message => {
         return message.reply(`Le résultat de **${first} ${signe} ${second} = ${result}**.`)
     }
     if (message.content.startsWith(prefix + "crédits")) {
-        return message.channel.send(embed.setTitle("(CRÉDITS)").setURL("https://github.com/Nyrok")
+        let crédits = new MessageEmbed()
+        return message.channel.send(crédits.setTitle("(CRÉDITS)").setURL("https://github.com/Nyrok")
             .addField("Créateur : Nyrok", `**Remerciements :**
         \`Seryû-Ub\` - github.com/Seryu-Ub
         \`Plattyz\` - github.com/Plattyz

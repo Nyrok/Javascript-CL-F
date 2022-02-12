@@ -26,5 +26,3 @@
 # Réseaux et Remerciements
 #### Twitter : [@Nyrok10](https://twitter.com/Nyrok10)
 #### Seryû-Ub : https://github.com/Seryu-Ub
-#### Plattyz : https://github.com/Plattyz
-#### Zelly : https://github.com/ZelliDev

@@ -3,26 +3,29 @@
 ### A simple project for javascript &amp; discord.js beginners.
 
 # Informations
-### Ceci est un projet qui vous permet de débuter le javascript (nodejs) avec les functions, les syntaxes mathématiques, et plus particulièrement la librairie discord.js (12.2.0) !
+### This is a project who helps you to begin with javascript and discord.js (12.X) library
 
-# Pré-requis
-* **Nodejs (v12.8.3 recommandé)** *Lien vers le site de téléchargement [ici](https://nodejs.org/en/download/).*
-* **Windows, Linux, Android** (tutoriel pour Windows ci-dessous)
-* **WinRAR** *Lien vers le site de téléchargement [ici](https://www.win-rar.com/postdownload.html).* 
-* **IDE** (Visual Studio Code ou Sublime Text recommandés)
-  * *Lien vers [Visual Studio Code](https://code.visualstudio.com/Download).*
-  * *Lien vers [Sublime Text](https://www.sublimetext.com/download).*
+# Requirements
+* **Nodejs (v12.8.3)** *Download [here](https://nodejs.org/en/download/).*
+* **Windows, Linux, Android**
+* **WinRAR** *Download [here](https://www.win-rar.com/postdownload.html).* 
+* **IDE** (Visual Studio Code or Sublime Text)
+  * *Link to [Visual Studio Code](https://code.visualstudio.com/Download).*
+  * *Link to [Sublime Text](https://www.sublimetext.com/download).*
  * **Packages NPM :**
   * *npm install [discord.js](https://www.npmjs.com/package/discord.js)*
   * *npm install [figlet](https://www.npmjs.com/package/figlet)*
   * *npm install [colors](https://www.npmjs.com/package/colors)*
   
-# Utilisation
-#### Tout d'abord, téléchargez le code [ici](https://github.com/Nyrok/JavascriptCL-F/archive/master.zip), ensuite extrayez le code.
-#### Ensuite ouvrez Visual Studio Code et faîtes Ctrl+K et Ctrl+O (ouvrir un dossier) et ouvrez le dossier extrait au début du tutoriel.
-#### Allez ensuite sur https://discord.com/developers/applications et créer une application, puis un bot et enfin copiez le token et entrez le dans le fichier `config.json`, *vous pouvez aussi y modifier ce que vous voulez*. [Comment créer un bot discord](https://youtu.be/lOhfkVCrxG4)
-#### Et enfin ouvrez le fichier start.cmd and `Enjoy !`
+# Usage
+#### First, download files [here](https://github.com/Nyrok/JavascriptCL-F/archive/master.zip), then extract them.
+#### Open your IDE (Visual Studio Code for me) and do Ctrl+K and Ctrl+O (open a folder) and select the folder of the project.
+#### Get in https://discord.com/developers/applications and create an application, then a bot and finally copy the token and insert it in `config.json` file. Tutorial video [here](https://youtu.be/lOhfkVCrxG4)
+#### Open the start.cmd file and `Enjoy !`
 
-# Réseaux et Remerciements
-#### Twitter : [@Nyrok10](https://twitter.com/Nyrok10)
-#### Seryû-Ub : https://github.com/Seryu-Ub
+# Credits
+* Nyrok :
+  - [Github](https://github.com/Nyrok) ![GitHub followers](https://img.shields.io/github/followers/Nyrok?style=social)
+  - [Twitter](https://twitter.com/@Nyrok10) ![Twitter Follow](https://img.shields.io/twitter/follow/Nyrok10?style=social)
+* Seryû-Ub :
+  - [Github](https://github.com/Seryu-Ub) ![GitHub followers](https://img.shields.io/github/followers/Seryu-Ub?style=social)
